@@ -11,10 +11,10 @@ int setCallback(CALLBACK_FUNC callback) {
 	return 0;
 }
 
-int function1(int i) {
-	printf("DLL : %d\n", i);
+int function1(ImageData* image) {
+	// printf("DLL : %d, %d\n", image->width, image->height);
 	if (cb != NULL)
-		cb(i + 1);
-	return i + 2;
+		cb(image);
+	return 0;
 }
 

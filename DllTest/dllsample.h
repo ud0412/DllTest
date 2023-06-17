@@ -6,7 +6,13 @@
 #define DLLSAMPLE_DECLSPEC __declspec(dllimport)
 #endif
 
-extern "C" typedef void (*CALLBACK_FUNC)(int i);
+extern "C" typedef struct {
+	int height;
+	int width;
+	unsigned char* data;
+} ImageData;
+
+extern "C" typedef void (*CALLBACK_FUNC)(ImageData *image);
 
 extern "C" DLLSAMPLE_DECLSPEC int setCallback(CALLBACK_FUNC callback);
-extern "C" DLLSAMPLE_DECLSPEC int function1(int i);
+extern "C" DLLSAMPLE_DECLSPEC int function1(ImageData *image);
