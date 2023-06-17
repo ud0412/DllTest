@@ -34,7 +34,7 @@ jobs:
 
     - name: unzip 3rd party library
       working-directory: ${{env.GITHUB_WORKSPACE}}
-      run: unzip -qq opencv-4.7.0.zip opencv-4.7.0/
+      run: unzip -qq opencv-4.7.0.zip -d opencv-4.7.0/
     
     - name: Add MSBuild to PATH
       uses: microsoft/setup-msbuild@v1.0.2
