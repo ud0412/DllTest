@@ -3,9 +3,37 @@
 
 #include <iostream>
 
+#include <opencv2/opencv.hpp>
+
+using namespace cv;
+
 int main()
 {
-    std::cout << "Hello World!\n";
+	VideoCapture cap("..\\data\\test.wmv");
+
+	if (!cap.isOpened())
+	{
+		printf("Can't open the video");
+		return -1;
+	}
+
+	Mat img;
+
+	while (1)
+	{
+		cap >> img;
+
+		if (img.empty())
+		{
+			printf("end of video");
+			return 0;
+		}
+
+		imshow("video img", img);
+
+		if (waitKey(25) != -1)
+			break;
+	}
 }
 
 // 프로그램 실행: <Ctrl+F5> 또는 [디버그] > [디버깅하지 않고 시작] 메뉴
