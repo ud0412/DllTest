@@ -8,6 +8,10 @@
 
 using namespace cv;
 
+void callback_func(int i) {
+	printf("CALLBACK : %d\n", i);
+}
+
 int main()
 {
 	VideoCapture cap("..\\data\\test.wmv");
@@ -18,6 +22,7 @@ int main()
 		return -1;
 	}
 
+	setCallback(callback_func);
 	printf("Application : %d\n", function1(1));
 
 	Mat img;
