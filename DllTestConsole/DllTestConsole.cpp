@@ -3,6 +3,7 @@
 
 #include <iostream>
 
+#include "dllsample.h"
 #include <opencv2/opencv.hpp>
 
 using namespace cv;
@@ -16,6 +17,8 @@ int main()
 		printf("Can't open the video");
 		return -1;
 	}
+
+	printf("Application : %d\n", function1(1));
 
 	Mat img;
 
