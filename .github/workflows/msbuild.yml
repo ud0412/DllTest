@@ -34,14 +34,14 @@ jobs:
 
     - name: unzip 3rd party library
       working-directory: ${{env.GITHUB_WORKSPACE}}
-      run: ls; unzip -qq opencv-4.7.0.zip
+      run: unzip -qq opencv-4.7.0.zip
     
     - name: Add MSBuild to PATH
       uses: microsoft/setup-msbuild@v1.0.2
 
     - name: Restore NuGet packages
       working-directory: ${{env.GITHUB_WORKSPACE}}
-      run: nuget restore ${{env.SOLUTION_FILE_PATH}}
+      run: ls; ls opencv-4.7.0; nuget restore ${{env.SOLUTION_FILE_PATH}}
 
     - name: Build
       working-directory: ${{env.GITHUB_WORKSPACE}}
