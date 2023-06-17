@@ -10,6 +10,7 @@ using namespace cv;
 
 void callback_func(ImageData* image) {
 	Mat img(image->height, image->width, CV_8UC3, image->data);
+	delete image;
 	imshow("video img", img);
 }
 
@@ -42,7 +43,6 @@ int main()
 		image->width = img.cols;
 		image->data = img.data;
 		function1(image);
-		delete image;
 
 		if (waitKey(25) != -1)
 			break;
