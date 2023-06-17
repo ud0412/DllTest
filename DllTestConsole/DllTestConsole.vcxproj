@@ -130,13 +130,13 @@ copy $(SolutionDir)\opencv-4.7.0\build\$(Platform)\vc16\bin\opencv_videoio_msmf4
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)\opencv-4.7.0\build\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\opencv-4.7.0\build\include;..\DllTest</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)\opencv-4.7.0\build\$(Platform)\vc16\lib</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opencv_world470d.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)\opencv-4.7.0\build\$(Platform)\vc16\lib;$(OutDir)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opencv_world470d.lib;DllTest.lib</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>copy $(SolutionDir)\opencv-4.7.0\build\$(Platform)\vc16\bin\opencv_world470d.dll $(OutDir)
@@ -151,15 +151,15 @@ copy $(SolutionDir)\opencv-4.7.0\build\$(Platform)\vc16\bin\opencv_videoio_msmf4
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)\opencv-4.7.0\build\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\opencv-4.7.0\build\include;..\DllTest</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)\opencv-4.7.0\build\$(Platform)\vc16\lib</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opencv_world470.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)\opencv-4.7.0\build\$(Platform)\vc16\lib;$(OutDir)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opencv_world470.lib;DllTest.lib</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>copy $(SolutionDir)\opencv-4.7.0\build\$(Platform)\vc16\bin\opencv_world470.dll $(OutDir)

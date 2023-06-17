@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DllTest", "DllTest\DllTest.vcxproj", "{D576E532-E4D9-401A-9893-6C96E35DEA2A}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DllTestConsole", "DllTestConsole\DllTestConsole.vcxproj", "{B1A21AFE-F843-4B2D-8587-CF499C3AD133}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D576E532-E4D9-401A-9893-6C96E35DEA2A} = {D576E532-E4D9-401A-9893-6C96E35DEA2A}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
