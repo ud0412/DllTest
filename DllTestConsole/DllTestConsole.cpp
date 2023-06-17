@@ -8,8 +8,9 @@
 
 using namespace cv;
 
-void callback_func(int i) {
-	printf("CALLBACK : %d\n", i);
+void callback_func(ImageData* image) {
+	Mat img(image->height, image->width, CV_8UC3, image->data);
+	imshow("video img", img);
 }
 
 int main()
@@ -23,7 +24,6 @@ int main()
 	}
 
 	setCallback(callback_func);
-	printf("Application : %d\n", function1(1));
 
 	Mat img;
 
@@ -37,7 +37,12 @@ int main()
 			return 0;
 		}
 
-		imshow("video img", img);
+		ImageData* image = new ImageData();
+		image->height = img.rows;
+		image->width = img.cols;
+		image->data = img.data;
+		function1(image);
+		delete image;
 
 		if (waitKey(25) != -1)
 			break;
